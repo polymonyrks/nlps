@@ -133,34 +133,3 @@ showMecabRes :: String -> IO ()
 showMecabRes str = do
   res <- getMecabed str
   uprint res
-
-take2 = take 2
-drop3 = drop 3
-
-divideAtTab :: String -> (String, String)
-divideAtTab s = (take2 s, drop3 s)
-
-isNotTab :: Char -> Bool
-isNotTab c = c /= '\t'
-
-isNotSpecChar :: Char -> Char -> Bool
-isNotSpecChar c c1 = c /= c1
-divideAt :: Char -> String -> (String, String)
-divideAt c s = (takeWhile (isNotSpecChar c) s, tail (dropWhile (isNotSpecChar c) s))
-
-ss1 = ['今', '日', '\t', '名', '詞', ',', '副', '詞', '可', '能']
-
-ss1left' = takeWhile isNotTab2 ss1
-  where
-      isNotTab2 c = c /= '\t'
-
-getTokenTag :: String -> (String, String)
-getTokenTag str = (token, tag)
-  where
-    token = takeWhile (\c -> c /= '\t') str
-    tagPrim
-     | dropped == "" = ""
-     | otherwise = tail dropped
-      where
-         dropped = (dropWhile (\c -> c /= '\t') str)
-    tag = takeWhile (\c -> c /= ',') tagPrim
