@@ -18,7 +18,6 @@ tests:
 copyright: 2020 Author name here
 maintainer: example@example.com
 dependencies:
-- time
 - unicode-show
 - foldl
 - base >= 4.7 && < 5
